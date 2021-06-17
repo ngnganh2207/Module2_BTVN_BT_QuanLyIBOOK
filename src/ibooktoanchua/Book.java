@@ -1,12 +1,10 @@
-package ibook;
+package ibooktoanchua;
 
-import java.util.Arrays;
-
-public class Book implements IBook,Comparable<Book> {
+public class Book implements IBook,Comparable<Book>{
     private int id;
     private String name;
     private String publishDate;
-    private String Author;
+    private String author;
     private String language;
     private float averagePrice;
 
@@ -17,7 +15,7 @@ public class Book implements IBook,Comparable<Book> {
         this.id = id;
         this.name = name;
         this.publishDate = publishDate;
-        Author = author;
+        this.author = author;
         this.language = language;
         this.averagePrice = averagePrice;
     }
@@ -47,11 +45,11 @@ public class Book implements IBook,Comparable<Book> {
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String author) {
-        Author = author;
+        this.author = author;
     }
 
     public String getLanguage() {
@@ -71,35 +69,22 @@ public class Book implements IBook,Comparable<Book> {
     }
 
     @Override
-    public String toString() {
-        return "Thông tin Book bằng toString là {" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", publishDate='" + publishDate + '\'' +
-                ", Author='" + Author + '\'' +
-                ", language='" + language + '\'' +
-                ", averagePrice=" + averagePrice +
-                '}';
-    }
-
-    @Override
     public void display() {
-        System.out.println(" Thông tin Book bằng method display là: {" +
+        System.out.println("Book{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", publishDate='" + publishDate + '\'' +
-                ", Author='" + Author + '\'' +
+                ", author='" + author + '\'' +
                 ", language='" + language + '\'' +
                 ", averagePrice=" + averagePrice +
                 '}');
     }
 
-
     @Override
     public int compareTo(Book o) {
-//        if(this.getId()>o.getId()){
+//        if (this.getId() > o.getId()) {
 //            return 1;
-//        }else {
+//        } else {
 //            return -1;
 //        }
         return this.getName().compareTo(o.getName());
